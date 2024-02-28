@@ -9,7 +9,6 @@ class Admin extends BaseController
 {
     public function halamanAdmin()
     {
-        echo "mutigenshinimpact";
         $data = [
             'akses' => session()->get('level')
         ];
