@@ -25,6 +25,8 @@
         <div class="content-wrapper d-flex align-items-center auth">
           <div class="row flex-grow">
             <div class="col-lg-4 mx-auto">
+              <h3 align="center"> Silahkan Login</h3>
+              <h3 align="center"> 𝓟𝓮𝓪𝓻𝓵𝓵𝔂𝓒𝓪𝓽𝓵𝓸𝓿𝓮𝓻</h3>
               <div class="auth-form-light text-left p-5">
                
                   <form action="<?=site_url('login-pengguna');?>"  method="POST">

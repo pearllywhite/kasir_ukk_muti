@@ -10,10 +10,10 @@
 </head>
 
 <body>
-    <h2>
-    NAMA TOKO    <br/>
+   <h2 align="center">
+    NAMA TOKO PEARLLY  <br/>
     Laporan Stok BARANG<br/>
-    Per <?=date('d M Y');?> </h2>
+   <?=date('d M Y');?> </h2>
     
     <table border=1 width=80% cellpadding=2 cellspacing=0 style="margin-top: 5px; text-align:center">
         <thead>
@@ -46,14 +46,14 @@
 
         </tbody>
     </table>
-     <p style="margin-left:450px">Mengetahui,<Br/>
+     <p style="left:450px">Mengetahui,<Br/>
      Petugas Stok Barang<br/>
      <br/>
      <br/>
-     <b><em>Mutiara Gemilah Cahya Putri</em></b>   </p>
+     <b><em>Mutiara Gemilah Cahya Putri</em></b></p>
 
 
-    <p><small><em>Digenerate oleh aplikasi SiStok &copy; <?=date('d-m-Y H:i:s');?> wib</em></small></p>
+    <p><small><em>Digenerate oleh aplikasi pearlly &copy; <?=date('d-m-Y H:i:s');?> wib</em></small></p>
 </body>
 
 </html>

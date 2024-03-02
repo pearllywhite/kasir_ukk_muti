@@ -39,7 +39,7 @@
                                 
                                 <div class="mb-3">
                                     <label for="inputName" class="form-label">Harga Beli</label>
-                                    <input type="text" class="form-control <?php if (session('errors.harga_beli')) : ?>is-invalid<?php endif ?>" id="inputHb" name="harga_beli" name="produk" placeholder="Masukan Harga Beli" autofocus autocomplete="off" value="<?= old('harga_beli') ?>">
+                                    <input type="number" class="form-control <?php if (session('errors.harga_beli')) : ?>is-invalid<?php endif ?>" id="inputHb" name="harga_beli" name="produk" placeholder="Masukan Harga Beli" autofocus autocomplete="off" value="<?= old('harga_beli') ?>">
                                         <div class="ms-2">
                                             <?php if (session()->has('errors')) : ?>
                                             <?php foreach (session('errors') as $field => $error) : ?>
@@ -53,7 +53,7 @@
                                 
                                 <div class="mb-3">
                                     <label for="inputName" class="form-label">Harga Jual</label>
-                                    <input type="text" class="form-control <?php if (session('errors.harga_jual')) : ?>is-invalid<?php endif ?>" id="inputHj" name="harga_jual" name="produk" placeholder="Masukan Harga Jual" autofocus autocomplete="off" value="<?= old('harga_jual') ?>">
+                                    <input type="number" class="form-control <?php if (session('errors.harga_jual')) : ?>is-invalid<?php endif ?>" id="inputHj" name="harga_jual" name="produk" placeholder="Masukan Harga Jual" autofocus autocomplete="off" value="<?= old('harga_jual') ?>">
                                         <div class="ms-2">
                                             <?php if (session()->has('errors')) : ?>
                                             <?php foreach (session('errors') as $field => $error) : ?>
@@ -103,7 +103,7 @@
                                 </div>
                                     <div class="mb-3">
                                     <label for="inputName" class="form-label">Stok</label>
-                                    <input type="text" class="form-control <?php if (session('errors.stok')) : ?>is-invalid<?php endif ?>" id="inputStok" name="stok" name="produk" placeholder="stok" autofocus autocomplete="off" value="<?= old('stok') ?>">
+                                    <input type="number" class="form-control <?php if (session('errors.stok')) : ?>is-invalid<?php endif ?>" id="inputStok" name="stok" name="produk" placeholder="stok" autofocus autocomplete="off" value="<?= old('stok') ?>">
                                         <div class="ms-2">
                                             <?php if (session()->has('errors')) : ?>
                                             <?php foreach (session('errors') as $field => $error) : ?>

@@ -21,7 +21,8 @@ $routes->get('/tambah-satuan', 'SatuanProduk::tambahSatuan');
 $routes->post('/simpan-satuan', 'SatuanProduk::simpanSatuan');
 $routes->get('/edit-satuan/(:num)', 'satuanProduk::editSatuan/$1');
 $routes->post('/perbarui-satuan', 'SatuanProduk::simpanEditSatuan');
-$routes->get('/hapus-satuan/(:num)', 'SatuanProduk::hapusSatuan/$1');
+$routes->post('/hapus-satuan/(:num)', 'SatuanProduk::hapusSatuan/$1');
+$routes->get('/cek-satuan-digunakan/(:segment)', 'Satuan::cek_keterkaitan_data/$1');
 
 //kategori
 $routes->get('/satuan-kategori', 'KategoriProduk::kategori');
@@ -29,7 +30,7 @@ $routes->get('/tambah-kategori', 'KategoriProduk::tambahKategori');
 $routes->post('/simpan-kategori', 'KategoriProduk::simpanKategori');
 $routes->get('/edit-kategori/(:num)', 'KategoriProduk::editKategori/$1');
 $routes->post('/perbarui-kategori', 'KategoriProduk::simpanEditKategori');
-$routes->get('/hapus-kategori/(:num)', 'KategoriProduk::hapusKategori/$1');
+$routes->post('/hapus-kategori/(:num)', 'KategoriProduk::hapusKategori/$1');
 
 
 //produk
@@ -37,9 +38,8 @@ $routes->get('/data-produk', 'Produk::tampilproduk');
 $routes->get('/tambah-produk', 'Produk::tambahProduk');
 $routes->post('/simpan-produk', 'Produk::simpanProduk');
 $routes->get('/edit-produk/(:num)', 'Produk::editProduk/$1');
-
 $routes->post('/perbarui-produk', 'Produk::simpaneditProduk');
-$routes->get('/hapus-produk/(:num)', 'Produk::hapusProduk/$1');
+$routes->post('/hapus-produk/(:num)', 'Produk::hapusProduk/$1');
 
 //penggguna
 $routes->get('/data-pengguna', 'Pengguna::pengguna');
@@ -52,10 +52,12 @@ $routes->get('/hapus-pengguna/(:any)', 'Pengguna::hapuspengguna/$1');
 //transaksi
 $routes->get('/transaksi-jual', 'TransaksiPenjualan::transaksi');
 $routes->post('/simpan-transaksi', 'TransaksiPenjualan::transaksiSimpan');
-$routes->get('/pembayaran', 'TransaksiPenjualan::transaksiSimpan');
+$routes->get('/pembayaran', 'TransaksiPenjualan::simpanPembayaran');
 
 //laporan
 $routes->get('/laporan','laporan::datalaporan');
 $routes->get('/pdf', 'PdfController::index');
 $routes->get('/pdf/generate', 'PdfController::generate');
+
+//
 

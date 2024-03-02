@@ -10,7 +10,7 @@
         <div class="row">
           <div class="col-md-6">
             <div class="form-group row">
-              <label for="noFaktur" class="col-sm-3 col-form-label">No Faktur</label>
+              <label for="noFaktur" class="col-sm-3 col-form-label">no faktur</label>
               <div class="col-sm-9">
                 <label class="form-control" name="no_faktur" readonly=""><?= $no_faktur ?></label>
               </div>
@@ -28,13 +28,13 @@
         <div class="row">
           <div class="col-md-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Kode Produk</label>
+              <label class="col-sm-3 col-form-label">Produk</label>
               <input type="hidden" class="form-control" value="<?= $no_faktur; ?>" name="no_faktur">
               <div class="col-sm-9">
                 <select class="js-example-basic-singel form-select" name="id_produk">
                   <?php if (isset($produkList)) :
                     foreach ($produkList as $row) : ?>
-                      <option value="<?= $row['id_produk']; ?>"><?= $row['nama_produk']; ?> | <?= $row['stok']; ?> | <?= number_format($row['harga_jual'], 0, ',', ','); ?></option>
+                      <option value="<?= $row['id_produk']; ?>"><?= $row['nama_produk']; ?> | <?= $row['stok']; ?> | <?= number_format($row['harga_jual'], 0, ',', '.'); ?></option>
                   <?php
                     endforeach;
                   endif; ?>

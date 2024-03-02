@@ -13,10 +13,20 @@
           <div class="col-sm-9">
 
             <input type="hidden" class="form-control" id="exampleInputUsername2" name="id_satuan" value="<?= $detailSatuan[0]['id_satuan'];?>">
-            <input type="text" class="form-control" id="exampleInputUsername2" placeholder="Masukan Satuan Produk" name="nama_satuan" required name="satuan_produk" value="<?= $detailSatuan[0]['nama_satuan'];?>">
+            <input type="text" class="form-control <?php if (session('errors.nama_satuan')) : ?>is-invalid<?php endif ?>" id="exampleInputUsername2" placeholder="Masukan Satuan Produk" name="nama_satuan" required name="satuan_produk" value="<?= $detailSatuan[0]['nama_satuan'];?>" autocomplete="off">
+              <div class="ms-2">
+                    <?php if (session()->has('errors')) : ?>
+                      <?php foreach (session('errors') as $field => $error) : ?>
+                        <?php if ($field === 'namaPelanggan') : ?>
+                          <span class="text-danger text-sm"><?= $error ?></span>
+                        <?php endif; ?>
+                      <?php endforeach; ?>
+                    <?php endif; ?>
+                  </div>
           </div>
         </div>
         <button type="submit" class="btn btn-gradient-primary me-2">Simpan</button>
+        &nbsp;<a href="/satuan-produk" class="btn btn-danger">Cancel</a>
       </form>
     </div>
   </div>

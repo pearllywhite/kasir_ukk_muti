@@ -37,4 +37,15 @@ class Msatuan extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getSatuan($idSatuan = false)
+    {
+
+        if ($idSatuan == false) {
+            return $this->findAll();
+        }
+
+        return $this->where(['id_satuan' => $idSatuan])->first();
+    }
+     
 }

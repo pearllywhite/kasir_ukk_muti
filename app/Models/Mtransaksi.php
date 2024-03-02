@@ -65,4 +65,10 @@ class Mtransaksi extends Model
         }
     }
 
+    public function getPendapatanHarian()
+    {
+        $today = date('Y-m-d');
+        return $this->where('DATE(tgl_penjualan)', $today)->select('SUM(total) AS pendapatan_harian')->get()->getRow()->pendapatan_harian;
+    }
+
 }

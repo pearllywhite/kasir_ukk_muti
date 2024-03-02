@@ -18,12 +18,46 @@ class Pengguna extends BaseController
     public function tambahPengguna()
     {
         $data = [
-            'akses' => session()->get('level')
+            'akses' => session()->get('level'),
+            'validation' => \Config\Services::validation()
         ];
         return view('pengguna/tambah-pengguna', $data);
     }
     public function simpanPengguna()
     {
+
+        $validation = \Config\Services::validation();
+
+        if ($this->request->getmethod() === 'post') {
+           $rules = [
+            
+               'username' => [
+                   'rules' => 'required|is_unique[tbl_user.username]',
+                   'errors' => [
+                       'required' => 'Username harus diisi.',
+                       'is_unique' => 'Username sudah terdaftar.'
+                   ]
+               ],
+               'nama_user' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Nama pengguna harus diisi.',
+                ]
+            ],
+            'password' => [
+                'rules' => 'required|min_length[3]',
+                'errors' => [
+                    'required' => 'Password harus diisi.',
+                    'min_length' => 'Password harus lebih dari 2 angka atau huruf'
+                ]
+            ],
+           ];
+           if (!$this->validate($rules)) {
+               session()->setFlashdata('errors', $validation->getErrors());
+               return redirect()->to('/tambah-pengguna')->withInput()->with('errors', $validation->getErrors());
+           }
+       }
+
         $data = [
             'username' => $this->request->getVar('username'),
             'nama_user' => $this->request->getVar('nama_user'),

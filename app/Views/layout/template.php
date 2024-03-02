@@ -21,30 +21,21 @@
     <link rel="stylesheet" href="<?=base_url('/PurpleAdmin/assets/css/style.css');?>">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="<?=base_url('/PurpleAdmin/images/favicon.ico');?>" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.csss" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
     <div class="container-scroller">
-      <!-- partial:../../partials/_navbar.html -->
+      <!-- partial:../../partials/_navbar.html (gambar logo di atas pojok-->
       <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-          <a class="navbar-brand brand-logo" href="index.html"><img src="assets/images/logo.svg" alt="logo" /></a>
-          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
+         <span>𝓟𝓮𝓪𝓻𝓵𝓵𝔂𝓒𝓪𝓽𝓵𝓸𝓿𝓮𝓻</span>
+                 
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-stretch">
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
             <span class="mdi mdi-menu"></span>
           </button>
-          <div class="search-field d-none d-md-block">
-            <form class="d-flex align-items-center h-100">
-              <div class="input-group">
-                <div class="input-group-prepend bg-transparent">
-                  <i class="input-group-text border-0 mdi mdi-magnify"></i>
-                </div>
-                <input type="text" class="form-control bg-transparent border-0" placeholder="Search projects">
-              </div>
-            </form>
-          </div>
+          
           <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item nav-profile dropdown">
               <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
@@ -119,12 +110,14 @@
               </a>
             </li>
             </li>
+            <?php if ($akses == 'Admin') : ?>
             <li class="nav-item">
               <a class="nav-link" href="<?=site_url('data-pengguna');?>">
                 <span class="menu-title">pengguna</span>
                 <i class="mdi mdi-chart-bar menu-icon"></i>
               </a>
             </li>
+            <?php endif; ?>
             </li>
            
             <li class="nav-item sidebar-actions">
@@ -197,6 +190,7 @@
         $('.barang').mask('000.000',{reverse:true});
     }   );
     </script>
+
     
   </body>
 </html>

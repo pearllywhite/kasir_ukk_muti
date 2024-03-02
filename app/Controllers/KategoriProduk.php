@@ -85,7 +85,6 @@ class KategoriProduk extends BaseController
             'id_kategori' => $idKategori
         ];
         $this->kategori_produk->where($syarat)->delete();
-
         return redirect()->to('/satuan-kategori');
     }
 }

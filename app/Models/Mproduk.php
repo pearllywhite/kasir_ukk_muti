@@ -62,4 +62,15 @@ class Mproduk extends Model
         $queryProduk = $produk->query("CALL lihat_laporan()")->getResult();
         return $queryProduk;
     }
+
+    public function getJumlahStok()
+    {
+        return $this->select('SUM(stok) AS total_stok')->get()->getRow()->total_stok;
+    }
+
+    public function getJumlahStokKosong()
+    {
+        return $this->where('stok', 0)->countAllResults();
+    }
+
 }
